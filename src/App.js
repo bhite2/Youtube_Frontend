@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import SearchPage from "./pages/SearchPage/Searchpage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="/search" element={<SearchPage/>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
