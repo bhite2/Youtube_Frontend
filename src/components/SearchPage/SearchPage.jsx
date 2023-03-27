@@ -2,12 +2,13 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import './SearchPage.css';
 import SearchBar from "../../components/SearchBar/SearchBar";
+// import {KEY} from './localKey.js';
 
 const SearchPage = (props) => {
 
     const [videos, setVideos] = useState([]);
-    const key = 'AIzaSyD5zvbsn67fOSLOXa_1AqsN7ijcWb-gOqk';
-    const query = props.searchInput
+    const key =  'AIzaSyD5zvbsn67fOSLOXa_1AqsN7ijcWb-gOqk';
+    
 
     useEffect(() => {
         fetchVideos();
@@ -19,12 +20,20 @@ const SearchPage = (props) => {
         setVideos(response.data.items);
       }
 
+      const [searchInput, setSearchInput] = useState('');
+      const query = searchInput
+
+      const handleChange = (event) => {
+          event.preventDefault();
+          console.log(event.target.value)
+          setSearchInput(event.target.value);
+        };
 
     return ( 
 
       <div>
         <div>
-          <SearchBar/>
+          <SearchBar search={searchInput} setSearch={setSearchInput} change={handleChange}/>
         </div>
          {videos.map((video) => {
           return (

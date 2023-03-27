@@ -1,9 +1,9 @@
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
-const VideoPlayer = (props) => {
+const VideoPage = (props) => {
     return ( 
         <VideoPlayer/>
      );
 }
  
-export default VideoPlayer;
+export default VideoPage;

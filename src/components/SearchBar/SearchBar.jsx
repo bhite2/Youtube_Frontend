@@ -1,20 +1,11 @@
-import React, {useState} from "react";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
     
-    const [searchInput, setSearchInput] = useState('');
-
-    const handleChange = (e) => {
-        e.preventDefault();
-        console.log(e.target.value)
-        setSearchInput(e.target.value);
-      };
-
     return ( 
         <div>
-            <form>
-                <input value = {searchInput} type= 'text' placeholder="Search..." onChange={handleChange}/>
-                <button onClick={(e) => setSearchInput(e.target.value)}>Search</button>
+            <form onSubmit={(event) => props.setSearch(event.target.value)}>
+                <input value = {props.search} type= 'text' placeholder="Search..." onChange={props.change} />
+                <button>Search</button>
             </form>
         </div>
      );
