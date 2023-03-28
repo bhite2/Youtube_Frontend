@@ -1,8 +1,11 @@
-import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import VideoPage from "../../components/VideoPage/VideoPage"
 
-const VideoPage = (props) => {
+
+const VideoPage = () => {
     return ( 
-        <VideoPlayer/>
+        <div>
+           <VideoPage/>
+        </div>
      );
 }
  

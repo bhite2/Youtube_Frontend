@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./SearchPage.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import { Link } from "react-router-dom";
 import { KEY } from "../../localKey";
 
-const SearchPage = (props) => {
+const SearchPage = () => {
   const [videos, setVideos] = useState([]);
-  const [searchInput, setSearchInput] = useState("deadpool");
+  const [searchInput, setSearchInput] = useState("Monster Jam");
 
   async function fetchVideos() {
     const response = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search?q=${searchInput}&key=${KEY}&part=snippet&maxresult=6q=gravedigger`
+      `https://www.googleapis.com/youtube/v3/search?q=${searchInput}&key=${KEY}&part=snippet&maxResults=6`
     );
     console.log(response.data.items);
     setVideos(response.data.items);
@@ -26,7 +27,7 @@ const SearchPage = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <div className="searchbar">
         <SearchBar
           search={searchInput}
@@ -34,11 +35,13 @@ const SearchPage = (props) => {
           handleSubmit={handleSubmit}
         />
       </div>
-      {videos.map((video) => {
+           {videos.map((video) => {
         return (
-          <div className="container">
+          <div>
             <div>
-              <img src={video.snippet.thumbnails.medium.url} />
+              <Link to={`/video/${video.id.videoId}`}>
+                <img src={video.snippet.thumbnails.medium.url} />
+              </Link>
             </div>
             <div>{video.snippet.title}</div>
             <div>{video.snippet.description}</div>

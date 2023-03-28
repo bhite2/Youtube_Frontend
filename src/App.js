@@ -6,7 +6,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import VideoPage from "./components/VideoPage/VideoPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -30,7 +30,7 @@ function App() {
           }
         />
         <Route path="/search" element={<SearchPage/>}/>
-        <Route path="/video" element={<VideoPlayer/>}/>
+        <Route path="/video/:videoId" element={<VideoPage/>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
