@@ -27,7 +27,7 @@ const SearchPage = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div>
       <div className="searchbar">
         <SearchBar
           search={searchInput}
@@ -37,7 +37,7 @@ const SearchPage = () => {
       </div>
            {videos.map((video) => {
         return (
-          <div>
+          <div className="videosearch">
             <div>
               <Link to={`/video/${video.id.videoId}`}>
                 <img src={video.snippet.thumbnails.medium.url} />

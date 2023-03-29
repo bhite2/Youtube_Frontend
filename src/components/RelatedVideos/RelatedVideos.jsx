@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { KEY } from "../../localKey";
+import { Link } from "react-router-dom";
 
 const RelatedVideos = (props) => {
 
@@ -25,7 +26,10 @@ const RelatedVideos = (props) => {
         return (
           <div>
             <div>
-              <img src={relatedvideo.snippet.thumbnails.default.url} />
+              <Link to={`/video/${relatedvideo.id.videoId}`}>
+                <img src={relatedvideo.snippet.thumbnails.default.url} />
+              </Link>
+              
             </div>
             <div>{relatedvideo.snippet.title}</div>
           </div>
