@@ -3,23 +3,26 @@ import RelatedVideos from "../RelatedVideos/RelatedVideos";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import SearchBar from "../SearchBar/SearchBar";
 import { useParams } from "react-router-dom";
+import "./VideoPage.css"
 
-const VideoPage = () => {
-    const {videoId} = useParams()
+const VideoPage = (props) => {
+  const { videoId } = useParams();
 
-    return ( 
-        <div>
-            <div>
-                <SearchBar/>
-            </div>
-            <div>
-                <VideoPlayer videoId = {videoId}/>
-            </div>
-            <div>
-                <RelatedVideos videoId = {videoId}/>
-            </div>
+  return (
+    <div>
+      <div className="searchbar">
+        <SearchBar />
+      </div>
+      <div className="flex-container">
+        <div className="flex-a">
+          <VideoPlayer videoId={videoId} />
         </div>
-     );
-}
- 
+        <div className="flex-b">
+          <RelatedVideos videoId={videoId} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default VideoPage;

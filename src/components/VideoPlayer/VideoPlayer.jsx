@@ -3,16 +3,18 @@ import React from "react";
 const VideoPlayer = (props) => {
   return (
             
+          <div>
             <div>
-            <iframe
-              id="ytplayer"
-              type="text/html"
-              width="640"
-              height="360"
-              src={`https://www.youtube.com/embed/${props.videoId}`}
-              frameborder="0"
-            ></iframe>
-          </div>
+              <iframe
+                id="ytplayer"
+                type="text/html"
+                width="640"
+                height="360"
+                src={`https://www.youtube.com/embed/${props.videoId}`}
+                frameborder="0"
+              ></iframe>
+            </div>
+          </div>  
         )
 
 };

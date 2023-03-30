@@ -27,7 +27,7 @@ const RelatedVideos = (props) => {
           <div>
             <div>
               <Link to={`/video/${relatedvideo.id.videoId}`}>
-                <img src={relatedvideo.snippet.thumbnails.default.url} />
+                <img src={relatedvideo.snippet.thumbnails.medium.url} />
               </Link>
               
             </div>

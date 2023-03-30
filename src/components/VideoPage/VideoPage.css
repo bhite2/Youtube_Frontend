@@ -1,0 +1,23 @@
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-a {
+    margin: 2em;
+    padding: 20;
+}
+
+.flex-b {
+    margin: 2em;
+    max-width: 320;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.search-container {
+    display:flex;
+    align-items: center;
+}

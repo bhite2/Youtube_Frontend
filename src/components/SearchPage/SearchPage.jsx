@@ -7,7 +7,7 @@ import { KEY } from "../../localKey";
 
 const SearchPage = () => {
   const [videos, setVideos] = useState([]);
-  const [searchInput, setSearchInput] = useState("Monster Jam");
+  const [searchInput, setSearchInput] = useState("Monster Jam Freestyle");
 
   async function fetchVideos() {
     const response = await axios.get(
@@ -35,19 +35,21 @@ const SearchPage = () => {
           handleSubmit={handleSubmit}
         />
       </div>
+      <div className="grid-container">
            {videos.map((video) => {
         return (
-          <div className="videosearch">
+          <div className="videocard">
             <div>
               <Link to={`/video/${video.id.videoId}`}>
                 <img src={video.snippet.thumbnails.medium.url} />
               </Link>
             </div>
-            <div>{video.snippet.title}</div>
-            <div>{video.snippet.description}</div>
+            <div className="title">{video.snippet.title}</div>
+            <div className="description">{video.snippet.description}</div>
           </div>
         );
       })}
+      </div>
     </div>
   );
 };
