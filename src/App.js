@@ -21,15 +21,15 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={
             <PrivateRoute>
               <HomePage />
             </PrivateRoute>
           }
-        />
-        <Route path="/search" element={<SearchPage/>}/>
+        /> */}
+        <Route path="/" element={<SearchPage/>}/>
         <Route path="/video/:videoId" element={<VideoPage/>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />

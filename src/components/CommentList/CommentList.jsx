@@ -1,23 +1,17 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 
-const CommentList = () => {
-  const [comments, setComments] = useState([])
 
-  async function allComments() {
-    const response = await axios.get("http://127.0.0.1:8000/api/comments/all/")
-    console.log(response.data);
-    setComments(response.data);
-  }
-
+const CommentList = (props) => {
 
   return ( 
     
     <div>
-      {comments.map((comment) => {
+      <h3>Comments</h3>
+      {props.comments.map((comment) => {
         return (
+          
           <div>
-          {comment.text}
+          {comment.user.username}: {comment.text}
           </div>
       )
      })}

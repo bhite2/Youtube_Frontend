@@ -11,7 +11,7 @@
 
 .flex-b {
     margin: 2em;
-    max-width: 320;
+    max-width: 200;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

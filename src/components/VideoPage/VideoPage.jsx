@@ -3,8 +3,9 @@ import RelatedVideos from "../RelatedVideos/RelatedVideos";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import SearchBar from "../SearchBar/SearchBar";
 import { useParams } from "react-router-dom";
-import CommentList from "../CommentList/CommentList"
+import Comment from "../Comment/Comment";
 import "./VideoPage.css"
+
 
 const VideoPage = () => {
   const { videoId } = useParams();
@@ -17,7 +18,7 @@ const VideoPage = () => {
       <div className="flex-container">
         <div className="flex-a">
           <VideoPlayer videoId={videoId} />
-          <CommentList/>
+          <Comment videoId={videoId}/>
         </div>
         <div className="flex-b">
           <RelatedVideos videoId={videoId} />
