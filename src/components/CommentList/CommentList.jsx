@@ -6,8 +6,8 @@ const CommentList = () => {
 
   async function allComments() {
     const response = await axios.get("http://127.0.0.1:8000/api/comments/all/")
-    console.log(response);
-    setComments(response);
+    console.log(response.data);
+    setComments(response.data);
   }
 
 
